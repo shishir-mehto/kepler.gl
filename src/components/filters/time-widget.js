@@ -51,8 +51,7 @@ const TopSectionWrapper = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding-right: ${innerPdSide * 2}px;
+  width: 90%;
   color: ${props => props.theme.labelColor};
   
   .bottom-widget__y-axis {

@@ -41,7 +41,7 @@ const DEFAULT_BLDG_COLOR = '#D1CEC7';
 
 const getDefaultState = () => {
   const visibleLayerGroups = {};
-  const styleType = 'dark';
+  const styleType = 'light';
   const topLayerGroups = {};
 
   return {

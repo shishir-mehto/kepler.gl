@@ -205,10 +205,10 @@ function LayerManagerFactory(AddDataButton, LayerPanel, SourceDataCatalog) {
               </Button>
             ) : null}
           </SidePanelSection>
-          <LayerBlendingSelector
+          {/* <LayerBlendingSelector
             layerBlending={this.props.layerBlending}
             updateLayerBlending={this.props.updateLayerBlending}
-          />
+          /> */}
         </StyledSortable>
       );
     }

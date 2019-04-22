@@ -36,17 +36,17 @@ export const labelColor = '#6A7485';
 export const labelHoverColor = '#C6C6C6';
 export const labelColorLT = '#6A7485';
 
-export const textColor = '#A0A7B4';
+export const textColor = '#6A7485';
 export const textColorLT = '#3A414C';
 export const titleColorLT = '#29323C';
 
 export const subtextColor = '#6A7485';
-export const subtextColorLT = '#A0A7B4';
-export const subtextColorActive = '#FFFFFF';
+export const subtextColorLT = '#494C52';
+export const subtextColorActive = '#EA6A47';
 
-export const titleTextColor = '#FFFFFF';
-export const textColorHl = '#D3D8E0';
-export const textColorHlLT = '#F1F1F1';
+export const titleTextColor = '#6A7485';
+export const textColorHl = '#3A3B3C ';
+export const textColorHlLT = '#C6C6C6';
 export const activeColor = '#1FBAD6';
 export const activeColorHover = '#108188';
 export const errorColor = '#F9042C';
@@ -60,14 +60,14 @@ export const primaryBtnBgdHover = '#13B17B';
 export const primaryBtnRadius = '2px';
 
 export const secondaryBtnBgd = '#6A7485';
-export const secondaryBtnActBgd = '#A0A7B4';
+export const secondaryBtnActBgd = '#494C52';
 export const secondaryBtnColor = '#FFFFFF';
 export const secondaryBtnActColor = '#FFFFFF';
-export const secondaryBtnBgdHover = '#A0A7B4';
+export const secondaryBtnBgdHover = '#494C52';
 
 export const linkBtnBgd = 'transparent';
 export const linkBtnActBgd = linkBtnBgd;
-export const linkBtnColor = '#A0A7B4';
+export const linkBtnColor = '#494C52';
 export const linkBtnActColor = textColorHlLT;
 export const linkBtnActBgdHover = linkBtnBgd;
 
@@ -82,22 +82,22 @@ export const inputBoxHeight = '34px';
 export const inputPadding = '4px 10px';
 export const inputFontSize = '11px';
 export const inputFontWeight = 500;
-export const inputBgd = '#29323C';
-export const inputBgdHover = '#3A414C';
-export const inputBgdActive = '#3A414C';
+export const inputBgd = '#e9e9e7';
+export const inputBgdHover = '#D4D4D2';
+export const inputBgdActive = '#D4D4D2';
 export const inputBorderColor = '#29323C';
-export const inputBorderHoverColor = '#3A414C';
+export const inputBorderHoverColor = '#D4D4D2';
 export const inputBorderActiveColor = '#D3D8E0';
-export const inputColor = '#A0A7B4';
+export const inputColor = '#494C52';
 export const inputBorderRadius = '1px';
-export const inputPlaceholderColor = '#6A7485';
+export const inputPlaceholderColor = '#494C52';
 export const inputPlaceholderFontWeight = 400;
 
 export const secondaryInputHeight = '28px';
-export const secondaryInputBgd = '#242730';
-export const secondaryInputBgdHover = '#3A414C';
-export const secondaryInputBgdActive = '#3A414C';
-export const secondaryInputColor = '#A0A7B4';
+export const secondaryInputBgd = '#f6f6f4';
+export const secondaryInputBgdHover = '#FFFFFF';
+export const secondaryInputBgdActive = '#E9E9E7';
+export const secondaryInputColor = '#494C52';
 export const secondaryInputBorderColor = '#242730';
 export const secondaryInputBorderActiveColor = '#D3D8E0';
 
@@ -110,19 +110,19 @@ export const selectFontSize = '11px';
 export const selectFontWeight = '400';
 export const selectFontWeightBold = '500';
 
-export const selectColorPlaceHolder = '#6A7485';
+export const selectColorPlaceHolder = '#494C52';
 export const selectBackground = inputBgd;
 export const selectBackgroundHover = inputBgdHover;
-export const selectBackgroundLT = '#FFFFFF';
+export const selectBackgroundLT = '#4E4F4F';
 export const selectBackgroundHoverLT = '#F8F8F9';
 export const selectBorderColor = '#D3D8E0';
 export const selectBorderColorLT = '#D3D8E0';
 export const selectBorderRadius = '1px';
 export const selectBorder = 0;
 
-export const dropdownListHighlightBg = '#6A7485';
+export const dropdownListHighlightBg = '#A0A7B4';
 export const dropdownListShadow = '0 6px 12px 0 rgba(0,0,0,0.16)';
-export const dropdownListBgd = '#3A414C';
+export const dropdownListBgd = '#D4D4D2';
 export const dropdownListBorderTop = '#242730';
 
 // Switch
@@ -130,7 +130,7 @@ export const switchWidth = 24;
 export const switchHeight = 12;
 export const switchLabelMargin = 12;
 
-export const switchTrackBgd = '#29323C';
+export const switchTrackBgd = '#D4D4D2';
 export const switchTrackBgdActive = activeColor;
 export const switchTrackBorderRadius = '1px';
 export const switchBtnBgd = '#6A7485';
@@ -140,8 +140,8 @@ export const switchBtnBorderRadius = '1px';
 export const switchBtnWidth = '12px';
 export const switchBtnHeight = '12px';
 
-export const secondarySwitchTrackBgd = '#242730';
-export const secondarySwitchBtnBgd = '#3A414C';
+export const secondarySwitchTrackBgd = '#D4D4D2';
+export const secondarySwitchBtnBgd = '#D3D8E0';
 
 // Checkbox
 export const checkboxWidth = 16;
@@ -154,18 +154,18 @@ export const checkboxBoxBgd = 'white';
 export const checkboxBoxBgdChecked = primaryBtnBgd;
 
 // Side Panel
-export const sidePanelHeaderBg = '#29323C';
-export const sidePanelBg = '#242730';
-export const sideBarCloseBtnBgd = secondaryBtnBgd;
+export const sidePanelHeaderBg = '#e9e9e7';
+export const sidePanelBg = '#f6f6f4';
+export const sideBarCloseBtnBgd = '#BFBFBE';
 export const sideBarCloseBtnColor = '#29323C';
-export const sideBarCloseBtnBgdHover = secondaryBtnActBgd;
+export const sideBarCloseBtnBgdHover = '#8B8B8B';
 
-export const panelBackground = '#29323C';
-export const panelBackgroundHover = '#3A4552';
-export const panelActiveBg = '#3A4552';
+export const panelBackground = '#e9e9e7';
+export const panelBackgroundHover = '#D4D4D2';
+export const panelActiveBg = '#D4D4D2';
 export const panelActiveBgLT = '#6A7485';
 export const panelHeaderIcon = '#6A7485';
-export const panelHeaderIconActive = '#A0A7B4';
+export const panelHeaderIconActive = '#494C52';
 export const panelHeaderHeight = 48;
 export const panelBoxShadow = '0 6px 12px 0 rgba(0,0,0,0.16)';
 export const panelBorderRadius = '2px';
@@ -177,15 +177,14 @@ export const panelBorderLT = `1px solid ${borderColorLight}`;
 
 export const mapPanelBackgroundColor = '#242730';
 export const mapPanelHeaderBackgroundColor = '#29323C';
-export const tooltipBg = '#F8F8F9';
-export const tooltipColor = '#333334';
+export const tooltipBg = '#3b4754';
+export const tooltipColor = '#F8F8F9';
 
 // Modal
 export const modalTitleColor = '#3A414C';
 export const modalTitleFontSize = '24px';
 export const modalFooterBgd = '#F8F8F9';
 export const modalImagePlaceHolder = '#DDDFE3';
-export const modalPadding = '10px 0';
 
 // Modal Dialog (Dark)
 export const modalDialogBgd = '#3A414C';
@@ -193,7 +192,7 @@ export const modalDialogColor = textColorHl;
 
 // Slider
 export const sliderBarColor = '#6A7485';
-export const sliderBarBgd = '#3A414C';
+export const sliderBarBgd = '#D4D4D2';
 export const sliderBarHoverColor = '#D3D8E0';
 export const sliderBarRadius = '1px';
 export const sliderBarHeight = '4px';
@@ -239,7 +238,9 @@ const input = css`
     ${props =>
       props.active
         ? props.theme.inputBorderActiveColor
-        : props.error ? props.theme.errorColor : props.theme.inputBgd};
+        : props.error
+        ? props.theme.errorColor
+        : props.theme.inputBgd};
   border-radius: 2px;
   caret-color: ${props => props.theme.inputBorderActiveColor};
   color: ${props => props.theme.inputColor};
@@ -260,7 +261,7 @@ const input = css`
   opacity: ${props => (props.disabled ? 0.5 : 1)};
 
   :hover {
-    cursor: ${props => props.type === 'number' ? 'text' : 'pointer'};
+    cursor: ${props => (props.type === 'number' ? 'text' : 'pointer')};
     background-color: ${props =>
       props.active ? props.theme.inputBgdActive : props.theme.inputBgdHover};
     border-color: ${props =>
@@ -319,11 +320,10 @@ const inputLT = css`
 
   :hover {
     background-color: ${props => props.theme.selectBackgroundLT};
-    cursor: ${props => ['number', 'text'].includes(props.type) ? 'text' : 'pointer'};
+    cursor: ${props =>
+      ['number', 'text'].includes(props.type) ? 'text' : 'pointer'};
     border-color: ${props =>
-    props.active
-      ? props.theme.textColorLT
-      : props.theme.subtextColor};
+      props.active ? props.theme.textColorLT : props.theme.subtextColor};
   }
 `;
 
@@ -333,9 +333,10 @@ const secondaryInput = css`
   background-color: ${props => props.theme.secondaryInputBgd};
   height: ${props => props.theme.secondaryInputHeight};
   border: 1px solid
-    ${props => props.error
-          ? props.theme.errorColor
-          : props.theme.secondaryInputBorderColor};
+    ${props =>
+      props.error
+        ? props.theme.errorColor
+        : props.theme.secondaryInputBorderColor};
 
   :hover {
     cursor: pointer;
@@ -407,13 +408,15 @@ const switchButton = css`
   transition: ${props => props.theme.transition};
   position: absolute;
   top: 0;
-  left: ${props => (props.checked ? props.theme.switchWidth / 2 : -1) - props.theme.switchLabelMargin}px;
+  left: ${props =>
+    (props.checked ? props.theme.switchWidth / 2 : -1) -
+    props.theme.switchLabelMargin}px;
   content: '';
   display: block;
   height: ${props => props.theme.switchBtnHeight};
   width: ${props => props.theme.switchBtnWidth};
-  background: ${props => props.checked ?
-  props.theme.switchBtnBgdActive : props.theme.switchBtnBgd};
+  background: ${props =>
+    props.checked ? props.theme.switchBtnBgdActive : props.theme.switchBtnBgd};
   box-shadow: ${props => props.theme.switchBtnBoxShadow};
 `;
 
@@ -448,8 +451,15 @@ const checkboxBox = css`
   left: 0;
   width: ${props => props.theme.checkboxWidth}px;
   height: ${props => props.theme.checkboxHeight}px;
-  background: ${props => props.checked ? props.theme.checkboxBoxBgdChecked : props.theme.checkboxBoxBgd};
-  border: 1px solid ${props => props.checked ? props.theme.checkboxBoxBgdChecked : props.theme.checkboxBorderColor};
+  background: ${props =>
+    props.checked
+      ? props.theme.checkboxBoxBgdChecked
+      : props.theme.checkboxBoxBgd};
+  border: 1px solid
+    ${props =>
+      props.checked
+        ? props.theme.checkboxBoxBgdChecked
+        : props.theme.checkboxBorderColor};
   border-radius: 2px;
   content: '';
 `;
@@ -464,8 +474,8 @@ const checkboxCheck = css`
   transform: rotate(-45deg);
   display: block;
   position: absolute;
-  opacity: ${props => props.checked ? 1 : 0};
-  content: "";
+  opacity: ${props => (props.checked ? 1 : 0)};
+  content: '';
 `;
 
 const inputCheckbox = css`
@@ -481,7 +491,7 @@ const inputCheckbox = css`
   margin-left: -${props => props.theme.switchLabelMargin}px;
 
   :before {
-     ${props => props.theme.checkboxBox};
+    ${props => props.theme.checkboxBox};
   }
 
   :after {
@@ -493,16 +503,17 @@ const secondarySwitch = css`
   ${props => props.theme.inputSwitch}
   :before {
     ${props => props.theme.switchTrack} background: ${props =>
-        props.checked
-          ? props.theme.switchTrackBgdActive
-          : props.theme.secondarySwitchTrackBgd};
+  props.checked
+    ? props.theme.switchTrackBgdActive
+    : props.theme.secondarySwitchTrackBgd};
   }
 
   :after {
     ${props => props.theme.switchButton}
-    background: ${props => props.checked
-          ? props.theme.switchBtnBgdActive
-          : props.theme.secondarySwitchBtnBgd};
+    background: ${props =>
+      props.checked
+        ? props.theme.switchBtnBgdActive
+        : props.theme.secondarySwitchBtnBgd};
   }
 `;
 
@@ -637,7 +648,7 @@ const panelDropdownScrollBar = css`
       background: ${props => props.theme.labelColor};
       cursor: pointer;
     }
-  };
+  }
 `;
 
 const scrollBar = css`
@@ -850,7 +861,6 @@ export const theme = {
   modalTitleFontSize,
   modalFooterBgd,
   modalImagePlaceHolder,
-  modalPadding,
 
   modalDialogBgd,
   modalDialogColor,

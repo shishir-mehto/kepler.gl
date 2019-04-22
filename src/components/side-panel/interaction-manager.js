@@ -24,16 +24,25 @@ import InteractionPanelFactory from './interaction-panel/interaction-panel';
 InteractionManagerFactory.deps = [InteractionPanelFactory];
 
 function InteractionManagerFactory(InteractionPanel) {
-  const InteractionManager = ({interactionConfig, datasets, onConfigChange}) => (
+  const InteractionManager = ({
+    interactionConfig,
+    datasets,
+    onConfigChange
+  }) => (
     <div className="interaction-manager">
-      {Object.keys(interactionConfig).map(key => (
-        <InteractionPanel
-          datasets={datasets}
-          config={interactionConfig[key]}
-          key={key}
-          onConfigChange={onConfigChange}
-        />
-      ))}
+      {Object.keys(interactionConfig).map(key => {
+        if (key === "brush") {
+        } else {
+          return (
+            <InteractionPanel
+              datasets={datasets}
+              config={interactionConfig[key]}
+              key={key}
+              onConfigChange={onConfigChange}
+            />
+          );
+        }
+      })}
     </div>
   );
 

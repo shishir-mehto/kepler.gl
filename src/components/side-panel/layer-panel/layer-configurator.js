@@ -165,10 +165,10 @@ export default class LayerConfigurator extends Component {
           textLabel={layer.config.textLabel}
         />
         {/* high precision */}
-        <LayerConfigGroup
+        {/* <LayerConfigGroup
           {...LAYER_VIS_CONFIGS['hi-precision']}
           {...visConfiguratorProps}
-        />
+        /> */}
       </StyledLayerVisualConfigurator>
     );
   }
@@ -363,10 +363,10 @@ export default class LayerConfigurator extends Component {
           </LayerConfigGroup> : null}
 
         {/* High Precision */}
-        <LayerConfigGroup
+        {/* <LayerConfigGroup
           {...layer.visConfigSettings['hi-precision']}
           {...visConfiguratorProps}
-        />
+        /> */}
       </StyledLayerVisualConfigurator>
     );
   }
@@ -441,10 +441,10 @@ export default class LayerConfigurator extends Component {
           </ConfigGroupCollapsibleContent>
         </LayerConfigGroup>
         {/* high precision */}
-        <LayerConfigGroup
+        {/* <LayerConfigGroup
           {...LAYER_VIS_CONFIGS['hi-precision']}
           {...visConfiguratorProps}
-        />
+        /> */}
       </StyledLayerVisualConfigurator>
     );
   }
@@ -509,10 +509,10 @@ export default class LayerConfigurator extends Component {
         </LayerConfigGroup>
 
         {/* high precision */}
-        <LayerConfigGroup
+        {/* <LayerConfigGroup
           {...LAYER_VIS_CONFIGS['hi-precision']}
           {...visConfiguratorProps}
-        />
+        /> */}
       </StyledLayerVisualConfigurator>
     );
   }
@@ -639,10 +639,10 @@ export default class LayerConfigurator extends Component {
         ) : null}
 
         {/* high precision */}
-        <LayerConfigGroup
+        {/* <LayerConfigGroup
           {...LAYER_VIS_CONFIGS['hi-precision']}
           {...visConfiguratorProps}
-        />
+        /> */}
       </StyledLayerVisualConfigurator>
     );
   }

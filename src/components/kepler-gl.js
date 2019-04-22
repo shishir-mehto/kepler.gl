@@ -290,7 +290,7 @@ function KeplerGlFactory(
               this.root = node;
             }}
           >
-            <NotificationPanel {...notificationPanelFields} />
+            {/* <NotificationPanel {...notificationPanelFields} /> */}
             {!uiState.readOnly && <SidePanel {...sideFields} />}
             <div className="maps" style={{display: 'flex'}}>
               {mapContainers}

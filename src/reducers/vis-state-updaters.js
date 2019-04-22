@@ -29,10 +29,7 @@ import {loadFilesErr} from 'actions/vis-state-actions';
 import {addDataToMap} from 'actions';
 
 // Utils
-import {
-  getDefaultInteraction,
-  findFieldsToShow
-} from 'utils/interaction-utils';
+import {getDefaultInteraction, findFieldsToShow} from 'utils/interaction-utils';
 import {
   getDefaultFilter,
   getFilterProps,
@@ -180,15 +177,15 @@ function updateStateWithLayerAndData(state, {layerData, layer, idx}) {
   };
 }
 
- /**
-  * Update layer base config: dataId, label, column, isVisible
-  * @memberof visStateUpdaters
-  * @param {Object} state `visState`
-  * @param {Object} action action
-  * @param {Object} action.oldLayer layer to be updated
-  * @param {Object} action.newConfig new config
-  * @returns {Object} nextState
-  */
+/**
+ * Update layer base config: dataId, label, column, isVisible
+ * @memberof visStateUpdaters
+ * @param {Object} state `visState`
+ * @param {Object} action action
+ * @param {Object} action.oldLayer layer to be updated
+ * @param {Object} action.newConfig new config
+ * @returns {Object} nextState
+ */
 export function layerConfigChangeUpdater(state, action) {
   const {oldLayer} = action;
   const idx = state.layers.findIndex(l => l.id === oldLayer.id);
@@ -531,8 +528,8 @@ export const addFilterUpdater = (state, action) =>
  */
 export const toggleFilterAnimationUpdater = (state, action) => ({
   ...state,
-  filters: state.filters.map(
-    (f, i) => (i === action.idx ? {...f, isAnimating: !f.isAnimating} : f)
+  filters: state.filters.map((f, i) =>
+    i === action.idx ? {...f, isAnimating: !f.isAnimating} : f
   )
 });
 
@@ -548,8 +545,8 @@ export const toggleFilterAnimationUpdater = (state, action) => ({
  */
 export const updateAnimationSpeedUpdater = (state, action) => ({
   ...state,
-  filters: state.filters.map(
-    (f, i) => (i === action.idx ? {...f, speed: action.speed} : f)
+  filters: state.filters.map((f, i) =>
+    i === action.idx ? {...f, speed: action.speed} : f
   )
 });
 
@@ -779,7 +776,7 @@ export const showDatasetTableUpdater = (state, action) => {
  * @returns {Object} nextState
  * @public
  */
-export const resetMapConfigVisStateUpdater = (state) => ({
+export const resetMapConfigVisStateUpdater = state => ({
   ...INITIAL_VIS_STATE,
   ...state.initialState,
   initialState: state.initialState
@@ -857,7 +854,7 @@ export const layerClickUpdater = (state, action) => ({
  * @returns {Object} nextState
  * @public
  */
-export const mapClickUpdater = (state) => ({
+export const mapClickUpdater = state => ({
   ...state,
   clicked: null
 });
@@ -1045,8 +1042,12 @@ export const updateVisDataUpdater = (state, action) => {
   let mergedState = mergeFilters(stateWithNewData, filterToBeMerged);
   // merge state with saved layers
   mergedState = mergeLayers(mergedState, layerToBeMerged);
-
-  if (mergedState.layers.length === state.layers.length) {
+  const {options} = action;
+  // let disableDefaultLayers = action.options.disableDefaultLayers;
+  if (
+    mergedState.layers.length === state.layers.length &&
+    !options.disabledAddDefaultLayers
+  ) {
     // no layer merged, find defaults
     mergedState = addDefaultLayers(mergedState, newDateEntries);
   }
@@ -1245,16 +1246,19 @@ export const loadFilesUpdater = (state, action) => {
   const loadFileTasks = [
     Task.all(filesToLoad.map(LOAD_FILE_TASK)).bimap(
       results => {
-        const data = results.reduce((f, c) => ({
-          // using concat here because the current datasets could be an array or a single item
-          datasets: f.datasets.concat(c.datasets),
-          // we need to deep merge this thing unless we find a better solution
-          // this case will only happen if we allow to load multiple keplergl json files
-          config: {
-            ...f.config,
-            ...(c.config || {})
-          }
-        }), {datasets: [], config: {}, options: {centerMap: true}});
+        const data = results.reduce(
+          (f, c) => ({
+            // using concat here because the current datasets could be an array or a single item
+            datasets: f.datasets.concat(c.datasets),
+            // we need to deep merge this thing unless we find a better solution
+            // this case will only happen if we allow to load multiple keplergl json files
+            config: {
+              ...f.config,
+              ...(c.config || {})
+            }
+          }),
+          {datasets: [], config: {}, options: {centerMap: true}}
+        );
         return addDataToMap(data);
       },
       error => loadFilesErr(error)

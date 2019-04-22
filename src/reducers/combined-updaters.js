@@ -25,6 +25,7 @@ import {receiveMapConfigUpdater as stateMapConfigUpdater} from './map-state-upda
 import {receiveMapConfigUpdater as styleMapConfigUpdater} from './map-style-updaters';
 import {findMapBounds} from 'utils/data-utils';
 import KeplerGlSchema from 'schemas';
+import {tsExpressionWithTypeArguments} from '@babel/types';
 
 // compose action to apply result multiple reducers, with the output of one
 
@@ -97,11 +98,9 @@ const combinedUpdaters = null;
 export const updateVisDataUpdater = (state, action) => {
   // keep a copy of oldLayers
   const oldLayers = state.visState.layers;
-
-  const visState = visStateUpdateVisDataUpdater(state.visState, action);
-
   const defaultOptions = {
-    centerMap: true
+    centerMap: true,
+    disabledAddDefaultLayers: false
   };
 
   const options = {
@@ -109,10 +108,19 @@ export const updateVisDataUpdater = (state, action) => {
     ...action.options
   };
 
+  action.options = {
+    ...defaultOptions,
+    ...action.options
+  };
+
+  const visState = visStateUpdateVisDataUpdater(state.visState, action);
+
   let bounds;
   if (options.centerMap) {
     // find map bounds for new layers
-    const newLayers = visState.layers.filter(nl => !oldLayers.find(ol => ol === nl));
+    const newLayers = visState.layers.filter(
+      nl => !oldLayers.find(ol => ol === nl)
+    );
     bounds = findMapBounds(newLayers);
   }
 
@@ -126,7 +134,9 @@ export const updateVisDataUpdater = (state, action) => {
       : state.mapState,
     uiState: {
       ...toggleModalUpdater(state.uiState, {payload: null}),
-      ...(options.hasOwnProperty('readOnly') ? {readOnly: options.readOnly} : {})
+      ...(options.hasOwnProperty('readOnly')
+        ? {readOnly: options.readOnly}
+        : {})
     }
   };
 };
@@ -155,30 +165,37 @@ export const updateVisDataComposed = updateVisDataUpdater;
  * @public
  */
 export const addDataToMapUpdater = (state, {payload}) => {
-
   const {datasets, options, config} = payload;
   let parsedConfig = config;
 
   if (config && config.config && config.version) {
     // if passed in saved config
-    parsedConfig = KeplerGlSchema.parseSavedConfig(config)
+    parsedConfig = KeplerGlSchema.parseSavedConfig(config);
   }
   // Update visState store
-  let mergedState = updateVisDataComposed(state, {datasets, options, config: parsedConfig && parsedConfig.visState});
+  let mergedState = updateVisDataComposed(state, {
+    datasets,
+    options,
+    config: parsedConfig && parsedConfig.visState
+  });
 
   // Update mapState store
   mergedState = {
     ...mergedState,
-    mapState: stateMapConfigUpdater(mergedState.mapState, {payload: {mapState: parsedConfig && parsedConfig.mapState}})
+    mapState: stateMapConfigUpdater(mergedState.mapState, {
+      payload: {mapState: parsedConfig && parsedConfig.mapState}
+    })
   };
 
   // Update mapStyle store
   mergedState = {
     ...mergedState,
-    mapStyle: styleMapConfigUpdater(mergedState.mapStyle, {payload: {mapStyle: parsedConfig && parsedConfig.mapStyle}})
+    mapStyle: styleMapConfigUpdater(mergedState.mapStyle, {
+      payload: {mapStyle: parsedConfig && parsedConfig.mapStyle}
+    })
   };
 
-  return mergedState
+  return mergedState;
 };
 
 export const addDataToMapComposed = addDataToMapUpdater;

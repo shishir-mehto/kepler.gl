@@ -55,6 +55,5 @@ export const LayerClasses = {
   geojson: GeojsonLayer,
   cluster: ClusterLayer,
   icon: IconLayer,
-  heatmap: HeatmapLayer,
-  hexagonId: H3Layer
+  heatmap: HeatmapLayer
 };

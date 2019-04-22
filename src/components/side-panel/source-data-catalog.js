@@ -51,7 +51,7 @@ const DatasetTitle = styled.div`
     }
 
     .dataset-action:hover {
-      color: white;
+      color: black;
     }
   }
 `;
